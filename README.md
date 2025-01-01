@@ -7,19 +7,23 @@ OpenChat is a lightweight and dependency-minimized web application designed to p
 ### ✨ Key Features
 
 1. 🔐 **User Authentication:**
+
    - Supports user registration (Sign up) and login (Log in).
    - User credentials are stored in the database.
 
 2. 🏠 **Chat Rooms:**
+
    - Users can create custom chat rooms by specifying a room name.
    - Users can browse existing chat rooms and join them.
    - Each user maintains a list of rooms they are a member of, enabling quick access to ongoing conversations.
 
 3. ⚡ **Real-Time Messaging:**
+
    - Messages within a room are exchanged in real-time using WebSocket communication.
    - Message history is maintained for each room.
 
 4. 👤 **Profile Management:**
+
    - Users can update their nickname and password.
    - Options to log out or delete the account are available.
 
