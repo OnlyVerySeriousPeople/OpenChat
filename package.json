@@ -1,0 +1,16 @@
+{
+  "name": "openchat",
+  "version": "1.0.0",
+  "description": "A simple, minimal-dependency web chat with authentication",
+  "homepage": "https://github.com/OnlyVerySeriousPeople/OpenChat#readme",
+  "authors": [
+    "Mykola Kushnir <mkushnir885@gmail.com>",
+    "Maksym Yatsenko <saddas1rambler@gmail.com>"
+  ],
+  "repository": "github:OnlyVerySeriousPeople/OpenChat",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}
