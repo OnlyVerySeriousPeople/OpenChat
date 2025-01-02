@@ -127,8 +127,6 @@ const handleFindPressed = () => {
     ee.onEvent('CHATS_HISTORY', ({ history }) => {
       chats = history;
 
-      console.log(chats);
-
       Object.keys(chats).forEach((chatId) => {
         const chat = chats[chatId];
         const chatCell = document.createElement('div');
@@ -157,9 +155,6 @@ const handleFindPressed = () => {
 
     socket.addEventListener('message', (msg) => {
       const { event, data } = JSON.parse(msg.data);
-
-      console.log({ event, data });
-
       ee.emitEvent(event, data);
     });
 
@@ -201,8 +196,6 @@ const handleFindPressed = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const { chat } = await response.json();
-
-        console.log({ chat });
 
         newChat.id = chat.id;
         chats[chat.id] = { ...chat, messages: [] };
@@ -289,6 +282,12 @@ const handleFindPressed = () => {
     const handleChatExit = (chatId) => {
       const room = document.getElementById(chatId.toString());
       if (room && room.classList.contains('room')) room.remove();
+      elements.chatMessages.innerHTML = '';
+      const msgToSelectRoom = document.createElement('div');
+      msgToSelectRoom.textContent = 'Choose a room';
+      msgToSelectRoom.className = 'no-room-msg';
+      elements.chatMessages.appendChild(msgToSelectRoom);
+      elements.chatPanel.style.setProperty('visibility', 'hidden');
     };
 
     elements.chatExitBtn.addEventListener('click', async () => {
