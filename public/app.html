@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>OpenChat</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles/app.css" />
+  </head>
+  <body>
+    <h1>OpenChat</h1>
+    <div class="container">
+      <div class="chat">
+        <div class="chat-messages">
+          <div class="no-room-msg">Choose a room first</div>
+        </div>
+        <div class="chat-panel">
+          <label>
+            <input
+              id="write-msg"
+              type="text"
+              placeholder="Write a message"
+              required
+              autocomplete="off"
+            />
+          </label>
+          <button id="send-msg">Send</button>
+          <button id="exit-chat">Exit</button>
+        </div>
+      </div>
+      <div class="chats-history">
+        <div class="search-room">
+          <label>
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Write a room name"
+              required
+              autocomplete="off"
+            />
+          </label>
+          <button id="search-btn">Find</button>
+        </div>
+        <div class="chat-rooms"></div>
+        <button id="btn-new-chat">New chat</button>
+      </div>
+    </div>
+    <div id="get-chat-data" class="modal">
+      <div class="modal-content">
+        <h2>Create new chat</h2>
+        <input type="text" id="chatName" placeholder="Chat name" />
+        <input type="text" id="chatTag" placeholder="Chat tag" />
+        <button id="btn-create-chat">Create</button>
+      </div>
+    </div>
+    <div class="bottom">
+      <button id="go-to-acc">Account</button>
+    </div>
+    <div class="snowfall">
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+    </div>
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>
