@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Web Chat</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles/account.css" />
+  </head>
+  <body>
+    <button id="go-to-app">Back to chats</button>
+    <h1>Account Management</h1>
+    <div class="options">
+      <form id="form-account" action="/account">
+        <input
+          id="change-firstname"
+          name="firstName"
+          type="text"
+          placeholder="Change your first name"
+        />
+        <input
+          id="change-lastname"
+          name="lastName"
+          type="text"
+          placeholder="Change your last name"
+        />
+        <input
+          id="change-tag"
+          name="tag"
+          type="text"
+          placeholder="Change your tag"
+        />
+        <input
+          id="change-pass"
+          name="password"
+          type="text"
+          placeholder="Change your password"
+        />
+        <input
+          id="enter-pass"
+          name="passwordConfirm"
+          type="text"
+          placeholder="Enter password to confirm"
+        />
+        <input value="Save" type="submit" />
+      </form>
+      <br />
+      <button id="btn-logout">Log out</button>
+      <button id="btn-delete">Delete account</button>
+    </div>
+
+    <div class="snowfall">
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+    </div>
+
+    <script src="./scripts/account.js"></script>
+  </body>
+</html>
