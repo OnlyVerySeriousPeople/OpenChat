@@ -15,7 +15,9 @@
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
     "prepare": "husky",
-    "test": "exit 0"
+    "test": "exit 0",
+    "http": "node lib/http/main.js",
+    "ws": "node lib/ws/main.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -30,8 +32,5 @@
     "husky": "^9.1.7",
     "prettier": "^3.4.2"
   },
-  "private": true,
-  "dependencies": {
-    "dotenv": "^16.4.7"
-  }
+  "private": true
 }
