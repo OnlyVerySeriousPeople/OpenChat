@@ -26,5 +26,8 @@
     "husky": "^9.1.7",
     "prettier": "^3.4.2"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
 }
