@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>OpenChat</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign up</h1>
+      <form id="form-signup" action="/signup" method="post">
+        <input
+          id="set-firstname"
+          type="text"
+          placeholder="First name"
+          required
+          name="firstName"
+        />
+        <input
+          id="set-lastname"
+          type="text"
+          placeholder="Last name"
+          name="lastName"
+        />
+        <input id="set-tag" type="text" placeholder="Tag" required name="tag" />
+        <input
+          id="set-pass"
+          type="text"
+          placeholder="Password"
+          required
+          name="password"
+        />
+        <input
+          id="confirm-pass"
+          type="text"
+          placeholder="Confirm password"
+          required
+          name="passwordConfirm"
+        />
+        <input value="Sign up" type="submit" />
+      </form>
+    </div>
+
+    <div class="snowfall">
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+      <div class="snowflake"></div>
+    </div>
+    <script src="./scripts/signup.js"></script>
+  </body>
+</html>
