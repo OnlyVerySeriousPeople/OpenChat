@@ -112,10 +112,10 @@ const handleFindPressed = () => {
     });
 
     const showChatMessages = (chat) => {
-      if (!currentChatId) {
+      if (!currentChatId)
         elements.msgToChooseRoom.style.setProperty('display', 'none');
+      if (window.getComputedStyle(elements.chatPanel).visibility === 'hidden')
         elements.chatPanel.style.setProperty('visibility', 'visible');
-      }
       currentChatId = parseInt(chat.id, 10);
       elements.chatMessages.innerHTML = '';
       const { messages } = chats[chat.id];
@@ -228,10 +228,10 @@ const handleFindPressed = () => {
       availableRooms.forEach((chat) => {
         chat.style.setProperty('display', 'flex');
       });
-      if (!currentChatId) {
+      if (!currentChatId)
         elements.msgToChooseRoom.style.setProperty('display', 'none');
+      if (window.getComputedStyle(elements.chatPanel).visibility === 'hidden')
         elements.chatPanel.style.setProperty('visibility', 'visible');
-      }
       room.id = roomId;
       fetchChatJoining(room, roomId);
       room.addEventListener('click', () => showChatMessages(room));
