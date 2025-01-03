@@ -24,7 +24,8 @@
     "http:health": "node lib/http/health.js",
     "ws": "node lib/ws/main.js",
     "ws:dev": "node --watch lib/ws/main.js",
-    "ws:health": "node lib/ws/health.js"
+    "ws:health": "node lib/ws/health.js",
+    "docker": "docker compose -f docker/local/docker-compose.yml up --build"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

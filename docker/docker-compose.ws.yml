@@ -15,7 +15,7 @@ services:
     environment:
       - WS_HOST=0.0.0.0
       - WS_PORT=8081
-      - HTTP_HOST=localhost
+      - HTTP_HOST=http
       - HTTP_PORT=8080
     env_file: .env.db
     healthcheck:

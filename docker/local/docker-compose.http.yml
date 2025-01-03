@@ -1,0 +1,7 @@
+services:
+  http-local:
+    extends:
+      file: ../docker-compose.http.yml
+      service: http
+    environment:
+      - WS_HOST=localhost

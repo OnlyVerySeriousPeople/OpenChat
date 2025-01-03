@@ -1,0 +1,7 @@
+services:
+  ws-local:
+    extends:
+      file: ../docker-compose.ws.yml
+      service: ws
+    environment:
+      - HTTP_HOST=localhost
