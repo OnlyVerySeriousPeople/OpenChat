@@ -238,9 +238,9 @@ const handleFindPressed = () => {
       elements.chatMessages.innerHTML = '';
     };
 
-    const startRoomSearch = async (roomName) => {
+    const startRoomSearch = async (roomTag) => {
       try {
-        const response = await fetch(`/app/chat?tag=${roomName}`);
+        const response = await fetch(`/app/chat?tag=${roomTag}`);
         if (!response.ok) {
           alert('There is no room with this name');
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -259,14 +259,14 @@ const handleFindPressed = () => {
           room.appendChild(reminder);
         } else {
           const room = document.createElement('div');
-          room.textContent = roomName;
+          room.textContent = chat.name;
           room.classList.add('room', 'not-in-room');
           reminder.textContent = 'You can join';
           room.appendChild(reminder);
           elements.chatRooms.appendChild(room);
           room.addEventListener('click', () => {
             room.remove();
-            handleRoomJoining(roomName, chat.id);
+            handleRoomJoining(chat.name, chat.id);
           });
         }
       } catch (err) {
@@ -275,13 +275,14 @@ const handleFindPressed = () => {
     };
 
     elements.searchButton.addEventListener('click', async () => {
-      const roomName = elements.searchInput.value;
-      await startRoomSearch(roomName);
+      const roomTag = elements.searchInput.value;
+      await startRoomSearch(roomTag);
     });
 
     const handleChatExit = (chatId) => {
       const room = document.getElementById(chatId.toString());
       if (room && room.classList.contains('room')) room.remove();
+      delete chats[chatId];
       elements.chatMessages.innerHTML = '';
       const msgToSelectRoom = document.createElement('div');
       msgToSelectRoom.textContent = 'Choose a room';
