@@ -1,0 +1,21 @@
+networks:
+  net:
+
+include:
+  - ../../../docker/docker-compose.db.yml
+  - ../../../docker/docker-compose.ws.yml
+
+services:
+  test:
+    build:
+      context: ../../..
+      dockerfile: docker/Dockerfile
+    depends_on:
+      ws:
+        condition: service_healthy
+    networks:
+      - net
+    environment:
+      - WS_HOST=ws
+      - WS_PORT=8081
+    env_file: ../../../docker/.env.db

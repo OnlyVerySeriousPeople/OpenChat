@@ -1,0 +1,21 @@
+networks:
+  net:
+
+include:
+  - ../../../docker/docker-compose.db.yml
+  - ../../../docker/docker-compose.http.yml
+
+services:
+  test:
+    build:
+      context: ../../..
+      dockerfile: docker/Dockerfile
+    depends_on:
+      http:
+        condition: service_healthy
+    networks:
+      - net
+    environment:
+      - HTTP_HOST=http
+      - HTTP_PORT=8080
+    env_file: ../../../docker/.env.db

@@ -1,0 +1,7 @@
+networks:
+  net:
+
+include:
+  - docker-compose.db.yml
+  - docker-compose.http.yml
+  - docker-compose.ws.yml
