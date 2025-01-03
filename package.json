@@ -15,7 +15,9 @@
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
     "prepare": "husky",
-    "test": "exit 0",
+    "jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests",
+    "test:unit": "npm run jest ./tests/unit",
+    "test": "npm run test:unit",
     "http": "node lib/http/main.js",
     "http:dev": "node --watch lib/http/main.js",
     "ws": "node lib/ws/main.js",
@@ -27,12 +29,14 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
     "prettier": "^3.4.2"
   },
   "private": true
