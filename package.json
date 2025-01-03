@@ -17,10 +17,13 @@
     "prepare": "husky",
     "test": "exit 0",
     "http": "node lib/http/main.js",
-    "ws": "node lib/ws/main.js"
+    "http:dev": "node --watch lib/http/main.js",
+    "ws": "node lib/ws/main.js",
+    "ws:dev": "node --watch lib/ws/main.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
+    "mysql2": "^3.12.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {
