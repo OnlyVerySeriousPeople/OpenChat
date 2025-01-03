@@ -2,6 +2,11 @@ import { afterEach, describe, expect, it, jest } from '@jest/globals';
 
 import Database from '../../../lib/database/Database.js';
 
+const console = {
+  info: () => {},
+  error: () => {},
+};
+
 describe('Database', () => {
   it('select: where', () => {
     const db = new Database({}, console);
