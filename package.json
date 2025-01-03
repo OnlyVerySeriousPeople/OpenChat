@@ -20,8 +20,10 @@
     "test": "npm run test:unit",
     "http": "node lib/http/main.js",
     "http:dev": "node --watch lib/http/main.js",
+    "http:health": "node lib/http/health.js",
     "ws": "node lib/ws/main.js",
-    "ws:dev": "node --watch lib/ws/main.js"
+    "ws:dev": "node --watch lib/ws/main.js",
+    "ws:health": "node lib/ws/health.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
