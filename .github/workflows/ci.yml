@@ -1,0 +1,33 @@
+name: 'Validate changes'
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v4
+
+      - name: 'Set up Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 'Install dependencies'
+        run: npm clean-install
+
+      - name: 'Check commit messages'
+        uses: wagoid/commitlint-github-action@v6
+        with:
+          configFile: commitlint.config.mjs
+
+      - name: 'Check code style'
+        run: npm run fmt:check
+
+      - name: 'Ensure code does not have errors'
+        run: npm run lint
+
+      - name: 'Run unit, integration and end-to-end tests'
+        run: npm run test
