@@ -19,6 +19,7 @@
     "test:unit": "npm run jest ./tests/unit",
     "test:integration": "./tests/integration/run.sh",
     "test:e2e": "./tests/e2e/run.sh",
+    "test:mut": "npx stryker run",
     "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
     "http": "node lib/http/main.js",
     "http:dev": "node --watch lib/http/main.js",
